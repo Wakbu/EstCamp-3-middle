@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EST 전술보안 인트라넷</title>
+    <link rel="stylesheet" href="/styles.css?v=military-3" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="EST Tactical Security Intranet home">
+        <span class="brand-mark">작전</span>
+        <span>
+          <strong>EST 전술보안 인트라넷</strong>
+          <small>교육사이버작전 상황판</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/#challenges">작전 과제</a>
+        <a href="/#scoreboard">전과 현황</a>
+        <a href="/#guide">작전 지침</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero compact-hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">사이버작전 교육망 / 제한구역</p>
+          <h1>침투 단서를 식별하고 인증 표식을 회수하라.</h1>
+          <p>
+            본 체계는 교육용 폐쇄망 상황판입니다. 분대명을 등록한 뒤 각 작전 과제의 취약 지점을 정찰하고,
+            확보한 인증 표식을 제출하면 전과 현황에 즉시 반영됩니다.
+          </p>
+        </div>
+        <aside class="status-panel" aria-label="Progress summary">
+          <span>현재 누적 전과</span>
+          <strong id="total-score">0</strong>
+          <p id="clear-count">0 / 0 임무완료</p>
+          <form class="team-form" id="team-form">
+            <label for="team-name">분대명</label>
+            <div>
+              <input id="team-name" name="team" maxlength="64" autocomplete="off" />
+              <button class="ghost-button" type="submit">등록</button>
+            </div>
+          </form>
+          <button class="ghost-button reset-button" id="reset-progress" type="button">작전 기록 초기화</button>
+        </aside>
+      </section>
+
+      <section class="challenge-hub" id="challenges">
+        <div class="section-heading">
+          <span>작전 과제 목록</span>
+          <button class="ghost-button" id="refresh-board" type="button">상황 갱신</button>
+        </div>
+        <div class="challenge-grid" id="challenge-grid">
+          <p class="empty-state">작전 과제 목록을 불러오는 중입니다.</p>
+        </div>
+      </section>
+
+      <section class="scoreboard" id="scoreboard">
+        <div class="section-heading">
+          <span>전과 현황</span>
+          <small>server progress</small>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>순위</th><th>분대</th><th>완료</th><th>전과</th></tr></thead>
+            <tbody id="scoreboard-body"><tr><td colspan="4">전과 현황을 불러오는 중입니다.</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide" id="guide">
+        <div class="section-heading">
+          <span>작전 지침</span>
+          <small>문제 추가 구조</small>
+        </div>
+        <div class="guide-grid">
+          <article><strong>과제 파일</strong><p><code>challenges/*.php</code>에 각 작전 페이지를 배치합니다.</p></article>
+          <article><strong>DB 편제</strong><p><code>challenges</code>와 <code>challenge_flags</code> 테이블에 과제 정보와 인증 표식을 등록합니다.</p></article>
+          <article><strong>상황판 반영</strong><p>메인 상황판은 DB의 활성 과제를 읽어 자동으로 과제 카드를 편성합니다.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal-overlay visible" id="tutorial-modal" aria-hidden="false">
+      <section class="tutorial-modal" role="dialog" aria-modal="true" aria-labelledby="tutorial-title">
+        <div class="section-heading">
+          <span id="tutorial-title">초기 작전 브리핑</span>
+          <button class="icon-button" id="tutorial-close" type="button" aria-label="close">×</button>
+        </div>
+        <div class="tutorial-body">
+          <p>분대명을 먼저 등록해야 인증 표식을 제출할 수 있습니다. 등록하지 않으면 문제를 풀어도 전과가 반영되지 않습니다.</p>
+          <ol>
+            <li>상단 상황판에서 분대명을 등록한 뒤 과제 카드를 선택합니다.</li>
+            <li>입력값, 쿠키, 응답 문구, 개발자 도구를 함께 점검합니다.</li>
+            <li>난도가 높은 과제는 힌트를 1단계부터 순서대로 열람합니다.</li>
+            <li>인증 표식을 확보하면 과제 하단 제출창에 <code>EST{...}</code> 형식으로 보고합니다.</li>
+          </ol>
+          <p class="form-help">힌트는 정답지가 아니라 정찰 순서를 잡아주는 작전 메모입니다.</p>
+        </div>
+        <button class="primary-button modal-action" id="tutorial-start" type="button">작전 개시</button>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/app.js?v=team-required-1"></script>
+  </body>
+</html>

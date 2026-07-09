@@ -1,0 +1,12 @@
+AddDefaultCharset UTF-8
+AddType 'text/html; charset=UTF-8' .html
+AddType 'text/css; charset=UTF-8' .css
+AddType 'application/javascript; charset=UTF-8' .js
+
+Options -Indexes
+
+RedirectMatch 404 "^/(db|docs|\.git|\.agents)(/|$)"
+RedirectMatch 404 "^/assets/vault(/|$)"
+RedirectMatch 404 "^/challenges/?$"
+RedirectMatch 404 "^/(README\.md|IMPLEMENTATION_NOTES\.md|server\.js)$"
+RedirectMatch 404 "^/(api|assets|challenges/generated)/?$"
