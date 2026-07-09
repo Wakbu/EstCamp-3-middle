@@ -17,7 +17,7 @@ if (($_GET['action'] ?? '') === 'claim') {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Idle Empire | EST 전술보안 인트라넷</title>
+    <title>코인 제국 보급 작전 | EST ?袁⑸떊癰귣똻釉??紐낅뱜??곌쉬</title>
     <link rel="stylesheet" href="/styles.css?v=military-3" />
     <style>
       .idle-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:18px}
@@ -38,51 +38,51 @@ if (($_GET['action'] ?? '') === 'claim') {
   </head>
   <body>
     <main class="challenge-page">
-      <a class="back-link" href="/">작전 과제 목록</a>
+      <a class="back-link" href="/">?臾믪읈 ?⑥눘??筌뤴뫖以?/a>
       <section class="challenge-detail">
-        <div class="section-heading"><span>Idle Empire</span><small>보급 자산 / 중급</small></div>
+        <div class="section-heading"><span>肄붿씤 ?쒓뎅 蹂닿툒 ?묒쟾</span><small>癰귣떯???癒?텦 / 餓λ쵌??/small></div>
         <div class="challenge-body">
-          <p class="eyebrow">300 전과 / 장기 보급 작전</p>
-          <h1>코인 제국 보급 증식 훈련</h1>
-          <p>전방 보급소의 자동 채굴 장비를 증설해 누적 보급 코인을 100,000,000 이상 확보하십시오. 단, 상황판의 보고 값이 어디서 검증되는지 확인하는 것이 핵심입니다.</p>
+          <p class="eyebrow">300 ?袁㏓궢 / ?觀由?癰귣떯???臾믪읈</p>
+          <h1>?꾨뗄????볥럢 癰귣떯??筌앹빘????덉졃</h1>
+          <p>?袁④컩 癰귣떯????벥 ?癒?짗 筌?쑨???貫?х몴?筌앹빘苑???袁⑹읅 癰귣떯???꾨뗄???100,000,000 ??곴맒 ?類ｋ궖??뤿뼏??뽰궎. ?? ?怨뱀넺?癒?벥 癰귣떯??揶쏅?????逾??野꺜筌앹빖由?遺? ?類ㅼ뵥??롫뮉 野껉퍔?????뼎??낅빍??</p>
 
           <div class="idle-panel">
-            <div class="idle-stat"><span>작전 목표</span><b><span id="earned">0</span> / 100,000,000</b></div>
+            <div class="idle-stat"><span>?臾믪읈 筌뤴뫚紐?/span><b><span id="earned">0</span> / 100,000,000</b></div>
             <div class="progress-rail"><div class="progress-fill" id="progress"></div></div>
           </div>
 
           <div class="idle-grid">
             <section class="idle-panel" style="text-align:center">
-              <h2>현장 채굴</h2>
-              <button class="coin-button" id="coinBtn" type="button">보급 확보</button>
+              <h2>?袁⑹삢 筌?쑨??/h2>
+              <button class="coin-button" id="coinBtn" type="button">癰귣떯???類ｋ궖</button>
               <div class="idle-stats">
-                <div class="idle-stat"><span>현재 코인</span><b id="coins">0</b></div>
-                <div class="idle-stat"><span>초당 생산</span><b id="cps">0</b></div>
-                <div class="idle-stat"><span>클릭 생산</span><b id="clickPower">1</b></div>
-                <div class="idle-stat"><span>작전 시간</span><b id="time">00:00:00</b></div>
+                <div class="idle-stat"><span>?袁⑹삺 ?꾨뗄??/span><b id="coins">0</b></div>
+                <div class="idle-stat"><span>?λ뜄????밴텦</span><b id="cps">0</b></div>
+                <div class="idle-stat"><span>??????밴텦</span><b id="clickPower">1</b></div>
+                <div class="idle-stat"><span>?臾믪읈 ??볦퍢</span><b id="time">00:00:00</b></div>
               </div>
             </section>
             <section class="idle-panel">
-              <h2>보급 증설</h2>
+              <h2>癰귣떯??筌앹빘苑?/h2>
               <div class="shop-list" id="shopList"></div>
             </section>
           </div>
 
           <div class="hint-box visible win-box" id="winBox">
-            <strong>목표 달성 보고</strong>
-            <p id="winText">본부 승인 대기 중...</p>
+            <strong>筌뤴뫚紐???苑?癰귣떯??/strong>
+            <p id="winText">癰귣챶? ?諭????疫?餓?..</p>
           </div>
 
           <div class="hint-box visible staged-hints">
-            <strong>작전 메모</strong>
-            <details><summary>1단계</summary><p>게임 진행 상태가 서버 DB가 아니라 브라우저 저장소에 남는지 확인하십시오.</p></details>
-            <details><summary>2단계</summary><p>서버에 최종 보고할 때 어떤 값이 전송되는지 네트워크 요청을 관찰하십시오.</p></details>
-            <details><summary>3단계</summary><p>중요한 전과 값은 클라이언트가 아니라 서버가 직접 계산해야 합니다. 이 훈련에서는 그 반대 상황을 이용하십시오.</p></details>
+            <strong>?臾믪읈 筌롫뗀??/strong>
+            <details><summary>1??ｍ?/summary><p>野껊슣??筌욊쑵六??怨밴묶揶쎛 ??뺤쒔 DB揶쎛 ?袁⑤빍???됰슢??怨? ???關?????ㅻ뮉筌왖 ?類ㅼ뵥??뤿뼏??뽰궎.</p></details>
+            <details><summary>2??ｍ?/summary><p>??뺤쒔??筌ㅼ뮇伊?癰귣떯???????堉?揶쏅????袁⑸꽊??롫뮉筌왖 ??쎈뱜??곌쾿 ?遺욧퍕???온筌↔퀬釉?????</p></details>
+            <details><summary>3??ｍ?/summary><p>餓λ쵐????袁㏓궢 揶쏅?? ?????곷섧?硫? ?袁⑤빍????뺤쒔揶쎛 筌욊낯???④쑴沅??곷튊 ??몃빍?? ????덉졃?癒?퐣??域?獄쏆꼶? ?怨뱀넺????곸뒠??뤿뼏??뽰궎.</p></details>
           </div>
 
           <form class="submit-row" data-flag-form data-challenge-id="<?php echo $challengeId; ?>">
             <input name="flag" placeholder="EST{...}" autocomplete="off" />
-            <button class="primary-button" type="submit">보고</button>
+            <button class="primary-button" type="submit">癰귣떯??/button>
           </form>
         </div>
       </section>
@@ -93,13 +93,13 @@ if (($_GET['action'] ?? '') === 'claim') {
       const goal = <?php echo $goal; ?>;
       const saveKey = 'idleEmpireSave';
       const units = [
-        {id:'u1', name:'휴대 채굴기', desc:'초소 단위 소형 장비', base:25, cps:1},
-        {id:'u2', name:'보급 드론', desc:'자동 회수 항로 증설', base:160, cps:6},
-        {id:'u3', name:'야전 발전기', desc:'장비 가동률 상승', base:900, cps:28},
-        {id:'u4', name:'전술 서버랙', desc:'정산 자동화 노드', base:4800, cps:120},
-        {id:'u5', name:'군수 공장', desc:'대량 보급 생산선', base:26000, cps:620},
-        {id:'u6', name:'위성 채굴망', desc:'광역 자원 수집망', base:140000, cps:3200},
-        {id:'u7', name:'사령부 금고', desc:'최종 보급 증폭 체계', base:750000, cps:17000}
+        {id:'u1', name:'??? 筌?쑨?ф묾?, desc:'?λ뜆????μ맄 ??곗굨 ?貫??, base:25, cps:1},
+        {id:'u2', name:'癰귣떯????뺤쨴', desc:'?癒?짗 ???땾 ??以?筌앹빘苑?, base:160, cps:6},
+        {id:'u3', name:'??깆읈 獄쏆뮇?얏묾?, desc:'?貫??揶쎛??뉗ぇ ?怨몃뱟', base:900, cps:28},
+        {id:'u4', name:'?袁⑸떊 ??뺤쒔??, desc:'?類ㅺ텦 ?癒?짗???紐껊굡', base:4800, cps:120},
+        {id:'u5', name:'?닿퀣???⑤벊??, desc:'????癰귣떯????밴텦??, base:26000, cps:620},
+        {id:'u6', name:'?袁⑷쉐 筌?쑨?э쭕?, desc:'?용쵐肉??癒?뜚 ??륁춿筌?, base:140000, cps:3200},
+        {id:'u7', name:'??議딃겫? 疫뀀뜃??, desc:'筌ㅼ뮇伊?癰귣떯??筌앹빜猷?筌ｋ떯??, base:750000, cps:17000}
       ];
       const $ = (id) => document.getElementById(id);
       const fmt = (n) => Math.floor(n).toLocaleString('ko-KR');
@@ -116,8 +116,8 @@ if (($_GET['action'] ?? '') === 'claim') {
         $('shopList').innerHTML = '';
         units.forEach(u => {
           const row = document.createElement('div'); row.className = 'shop-item';
-          const info = document.createElement('div'); info.innerHTML = `<strong>${u.name}</strong><small>${u.desc}<br>보유 ${state.levels[u.id] || 0} / +${fmt(u.cps)} CPS</small>`;
-          const btn = document.createElement('button'); btn.className = 'primary-button'; btn.type = 'button'; btn.textContent = `${fmt(cost(u))} 구매`; btn.disabled = state.coins < cost(u);
+          const info = document.createElement('div'); info.innerHTML = `<strong>${u.name}</strong><small>${u.desc}<br>癰귣똻? ${state.levels[u.id] || 0} / +${fmt(u.cps)} CPS</small>`;
+          const btn = document.createElement('button'); btn.className = 'primary-button'; btn.type = 'button'; btn.textContent = `${fmt(cost(u))} ?닌됤꼻`; btn.disabled = state.coins < cost(u);
           btn.onclick = () => buy(u.id);
           row.append(info, btn); $('shopList').append(row);
         });
@@ -131,7 +131,7 @@ if (($_GET['action'] ?? '') === 'claim') {
       async function claim(){
         won = true; $('winBox').classList.add('show');
         const res = await fetch('?action=claim', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:'totalEarned=' + encodeURIComponent(state.totalEarned)});
-        const data = await res.json(); $('winText').textContent = data.success ? `본부 승인 완료: ${data.flag}` : '목표 수치가 부족합니다.';
+        const data = await res.json(); $('winText').textContent = data.success ? `癰귣챶? ?諭???袁⑥┷: ${data.flag}` : '筌뤴뫚紐???륂뒄揶쎛 ?봔鈺곌퉲鍮??덈뼄.';
       }
       $('coinBtn').onclick = () => {state.coins += 1; state.totalEarned += 1; save(); render();};
       setInterval(() => {const gain = cps(); state.coins += gain; state.totalEarned += gain; state.playTime += 1; save(); render();}, 1000);

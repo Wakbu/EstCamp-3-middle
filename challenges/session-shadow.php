@@ -21,23 +21,23 @@ if ($role === 'admin') {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Session Shadow | EST 전술보안 인트라넷</title>
+    <title>세션 그림자 | EST ?袁⑸떊癰귣똻釉??紐낅뱜??곌쉬</title>
     <link rel="stylesheet" href="/styles.css?v=military-3" />
   </head>
   <body>
     <main class="challenge-page">
-      <a class="back-link" href="/">← 작전 과제 목록</a>
+      <a class="back-link" href="/">???臾믪읈 ?⑥눘??筌뤴뫖以?/a>
       <section class="challenge-detail">
         <div class="section-heading">
-          <span>Session Shadow</span>
-          <small>인증 쿠키 점검</small>
+          <span>?몄뀡 洹몃┝??/span>
+          <small>?紐꾩쵄 ?묒쥚沅??癒?</small>
         </div>
         <div class="challenge-body">
-          <p class="eyebrow">150 전과 / 초급 작전</p>
-          <h1>보이지 않는 계급장</h1>
-          <p>교육망 출입 통제소가 접속자의 보직 값을 확인하고 있습니다. 내게 발급된 출입증이 어디에 저장되는지 확인하고, 더 높은 권한의 통행 표식을 재현하십시오.</p>
+          <p class="eyebrow">150 ?袁㏓궢 / ?λ뜃???臾믪읈</p>
+          <h1>癰귣똻?좑쭪? ??낅뮉 ?④쑨???/h1>
+          <p>?대Ŋ?곻쭕??곗뮇?????젫??? ?臾믩꺗?癒?벥 癰귣똻彛?揶쏅????類ㅼ뵥??랁???됰뮸??덈뼄. ??우쓺 獄쏆뮄????곗뮇??쭩?뱀뵠 ??逾?????貫由?遺? ?類ㅼ뵥??랁? ???誘? 亦낅슦釉?????뻬 ??뽯뻼???????뤿뼏??뽰궎.</p>
           <div class="terminal">
-            <span>출입 판정</span>
+            <span>?곗뮇???癒?젟</span>
             <code><?php echo $role === 'admin' ? 'granted' : 'limited'; ?></code>
           </div>
           <?php if ($flag): ?>
@@ -47,14 +47,14 @@ if ($role === 'admin') {
             </div>
           <?php else: ?>
             <div class="hint-box visible staged-hints">
-              <strong>작전 메모</strong>
-              <details open><summary>1단계</summary><p>브라우저 보급품 창고(Application/Storage)에서 이 교육망이 발급한 출입증 값을 확인하십시오.</p></details>
-              <details><summary>2단계</summary><p>보직을 나타내는 값이 있다면, 통제소 판정이 바뀌는지 조심스럽게 조정해 보십시오.</p></details>
+              <strong>?臾믪읈 筌롫뗀??/strong>
+              <details open><summary>1??ｍ?/summary><p>?됰슢??怨? 癰귣떯???筌≪럡??Application/Storage)?癒?퐣 ???대Ŋ?곻쭕?뱀뵠 獄쏆뮄????곗뮇??쭩?揶쏅????類ㅼ뵥??뤿뼏??뽰궎.</p></details>
+              <details><summary>2??ｍ?/summary><p>癰귣똻彛?????????揶쏅?????덈뼄筌? ???젫???癒?젟??獄쏅뗀???뮉筌왖 鈺곌퀣???살쓦野?鈺곌퀣???癰귣똻???뽰궎.</p></details>
             </div>
           <?php endif; ?>
           <form class="submit-row" data-flag-form data-challenge-id="<?php echo $challengeId; ?>">
             <input name="flag" placeholder="EST{...}" autocomplete="off" />
-            <button class="primary-button" type="submit">보고</button>
+            <button class="primary-button" type="submit">癰귣떯??/button>
           </form>
         </div>
       </section>

@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'revie
         $result = 'reviewed';
         if (stripos($row['body'], 'fetch("/challenges/admin-memo-chain.php?admin_api=flag")') !== false ||
             stripos($row['body'], "fetch('/challenges/admin-memo-chain.php?admin_api=flag')") !== false) {
-            $result = 'admin browser fetched private API: ' . $flag;
+            $result = '愿由ш? 釉뚮씪?곗?媛 鍮꾧났媛?API瑜??몄텧?? ' . $flag;
         }
         $stmt = $conn->prepare('UPDATE admin_memos SET review_result = ? WHERE id = ?');
         $id = (int) $row['id'];
@@ -51,38 +51,38 @@ $memos = $conn->query('SELECT id, body, review_result, created_at FROM admin_mem
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Memo Chain | EST 전술보안 인트라넷</title>
+    <title>관리관 메모 연쇄 | EST ?袁⑸떊癰귣똻釉??紐낅뱜??곌쉬</title>
     <link rel="stylesheet" href="/styles.css?v=military-3" />
   </head>
   <body>
     <main class="challenge-page">
-      <a class="back-link" href="/">← 작전 과제 목록</a>
+      <a class="back-link" href="/">???臾믪읈 ?⑥눘??筌뤴뫖以?/a>
       <section class="challenge-detail">
         <div class="section-heading">
-          <span>Admin Memo Chain</span>
-          <small>검열관 브라우저 유도</small>
+          <span>愿由ш? 硫붾え ?곗뇙</span>
+          <small>野꺜??? ?됰슢??怨? ?醫딅즲</small>
         </div>
         <div class="challenge-body">
-          <p class="eyebrow">400 전과 / 고급 작전</p>
-          <h1>검열관 메모 체계 침투</h1>
-          <p>야전 메모는 저장 후 검열관 단말에서 다시 열람됩니다. 내가 남긴 문장이 검열관 권한의 브라우저에서 어떻게 해석되는지 확인하고, 내부 전용 호출까지 연결하십시오.</p>
+          <p class="eyebrow">400 ?袁㏓궢 / ?⑥쥒???臾믪읈</p>
+          <h1>野꺜??? 筌롫뗀??筌ｋ떯??燁삘뫂??/h1>
+          <p>??깆읈 筌롫뗀?????????野꺜??? ??ㅼ춾?癒?퐣 ??쇰뻻 ?????몃빍?? ??? ??ｋ┸ ?얜챷???野꺜??? 亦낅슦釉???됰슢??怨??癒?퐣 ??堉멨칰???곴퐤??롫뮉筌왖 ?類ㅼ뵥??랁? ??? ?袁⑹뒠 ?紐꾪뀱繹먮슣? ?怨뚭퍙??뤿뼏??뽰궎.</p>
           <?php if ($message): ?><div class="hint-box visible"><p><?php echo $message; ?></p></div><?php endif; ?>
           <form class="tool-form" method="post">
             <input type="hidden" name="action" value="write" />
-            <label for="memo">작전 메모 내용</label>
+            <label for="memo">?臾믪읈 筌롫뗀????곸뒠</label>
             <textarea id="memo" name="body" rows="6" placeholder="&#xAC80;&#xD1A0;&#xB420; &#xBA54;&#xBAA8;&#xB97C; &#xC785;&#xB825;&#xD558;&#xC138;&#xC694;."></textarea>
-            <button class="primary-button" type="submit">메모 등록</button>
+            <button class="primary-button" type="submit">筌롫뗀???源낆쨯</button>
           </form>
           <div class="hint-box visible staged-hints">
-            <strong>작전 메모</strong>
-            <p>막히면 아래 순서대로 정찰하십시오.</p>
-            <details><summary>1단계</summary><p>&#xBA54;&#xBAA8;&#xC5D0; &#xB0A8;&#xAE34; &#xBB38;&#xC790;&#xAC00; &#xC800;&#xC7A5; &#xD6C4; &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3CC;&#xC544;&#xC624;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;. &#xADF8;&#xB300;&#xB85C; &#xBCF4;&#xC774;&#xB294;&#xC9C0;&#xAC00; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p></details>
-            <details><summary>2단계</summary><p>&#xD398;&#xC774;&#xC9C0;&#xAC00; &#xB0B4; &#xC785;&#xB825;&#xC744; &#xBB38;&#xC790;&#xB85C; &#xBCF4;&#xC874;&#xD558;&#xB294;&#xC9C0;, &#xD654;&#xBA74; &#xAD6C;&#xC131;&#xC694;&#xC18C;&#xB85C; &#xD574;&#xC11D;&#xD558;&#xB294;&#xC9C0; &#xBE44;&#xAD50;&#xD574;&#xBCF4;&#xC138;&#xC694;.</p></details>
-            <details><summary>3단계</summary><p>&#xAC80;&#xD1A0; &#xD750;&#xB984;&#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xB978; &#xAD8C;&#xD55C;&#xC758; &#xC790;&#xC6D0;&#xC744; &#xC694;&#xCCAD;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xC138;&#xC694;. &#xC694;&#xCCAD; &#xACB0;&#xACFC;&#xAC00; &#xBA54;&#xBAA8; &#xAE30;&#xB85D;&#xC5D0; &#xB0A8;&#xB294;&#xC9C0;&#xB3C4; &#xBCF4;&#xC138;&#xC694;.</p></details>
+            <strong>?臾믪읈 筌롫뗀??/strong>
+            <p>筌띾맪?놂쭖??袁⑥삋 ??뽮퐣??嚥??類ㅺ컳??뤿뼏??뽰궎.</p>
+            <details><summary>1??ｍ?/summary><p>&#xBA54;&#xBAA8;&#xC5D0; &#xB0A8;&#xAE34; &#xBB38;&#xC790;&#xAC00; &#xC800;&#xC7A5; &#xD6C4; &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3CC;&#xC544;&#xC624;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;. &#xADF8;&#xB300;&#xB85C; &#xBCF4;&#xC774;&#xB294;&#xC9C0;&#xAC00; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p></details>
+            <details><summary>2??ｍ?/summary><p>&#xD398;&#xC774;&#xC9C0;&#xAC00; &#xB0B4; &#xC785;&#xB825;&#xC744; &#xBB38;&#xC790;&#xB85C; &#xBCF4;&#xC874;&#xD558;&#xB294;&#xC9C0;, &#xD654;&#xBA74; &#xAD6C;&#xC131;&#xC694;&#xC18C;&#xB85C; &#xD574;&#xC11D;&#xD558;&#xB294;&#xC9C0; &#xBE44;&#xAD50;&#xD574;&#xBCF4;&#xC138;&#xC694;.</p></details>
+            <details><summary>3??ｍ?/summary><p>&#xAC80;&#xD1A0; &#xD750;&#xB984;&#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xB978; &#xAD8C;&#xD55C;&#xC758; &#xC790;&#xC6D0;&#xC744; &#xC694;&#xCCAD;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xC138;&#xC694;. &#xC694;&#xCCAD; &#xACB0;&#xACFC;&#xAC00; &#xBA54;&#xBAA8; &#xAE30;&#xB85D;&#xC5D0; &#xB0A8;&#xB294;&#xC9C0;&#xB3C4; &#xBCF4;&#xC138;&#xC694;.</p></details>
           </div>
           <form method="post" class="inline-form">
             <input type="hidden" name="action" value="review" />
-            <button class="ghost-button" type="submit">검열관 검토 요청</button>
+            <button class="ghost-button" type="submit">野꺜??? 野꺜???遺욧퍕</button>
           </form>
           <div class="memo-list">
             <?php while ($memo = $memos->fetch_assoc()): ?>
@@ -95,7 +95,7 @@ $memos = $conn->query('SELECT id, body, review_result, created_at FROM admin_mem
           </div>
           <form class="submit-row" data-flag-form data-challenge-id="<?php echo $challengeId; ?>">
             <input name="flag" placeholder="EST{...}" autocomplete="off" />
-            <button class="primary-button" type="submit">보고</button>
+            <button class="primary-button" type="submit">癰귣떯??/button>
           </form>
         </div>
       </section>
