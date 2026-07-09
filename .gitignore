@@ -8,3 +8,4 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
+LOCAL_SECRETS_DO_NOT_COMMIT.txt
