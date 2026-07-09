@@ -52,14 +52,8 @@ if (array_key_exists('host', $_GET)) {
             <pre class="terminal"><?php echo htmlspecialchars($output, ENT_QUOTES, 'UTF-8'); ?></pre>
           <?php endif; ?>
 
-          <div class="hint-box visible staged-hints">
-            <strong>?묒쟾 硫붾え</strong>
-            <p>留됲엳硫??쒖꽌?濡??대엺?섏떗?쒖삤.</p>
-            <details><summary>1?④퀎</summary><p>癒쇱? ?뺤긽 ?몄뒪?몃? ?ｊ퀬, ???뱀닔臾몄옄瑜??욎뿀????異쒕젰???대뼸寃??щ씪吏?붿? 鍮꾧탳?섏떗?쒖삤.</p></details>
-            <details><summary>2?④퀎</summary><p>?쒕쾭 紐낅졊? 怨좎젙??ping ?묐몢???ㅼ뿉 ?낅젰媛믪쓣 遺숈뿬 議곕┰?⑸땲??</p></details>
-            <details><summary>3?④퀎</summary><p>?쒖떇? <code>/tmp/est-net-diagnostics-flag.txt</code>??湲곕줉?섏뼱 ?덉뒿?덈떎.</p></details>
-          </div>
-
+                    <!-- 작전 단서: host 입력은 고정 ping 명령 뒤에 붙는다. 셸 구분자를 넣었을 때 출력 변화를 보라. -->
+          <!-- 작전 단서: 진단 표식은 /tmp/est-net-diagnostics-flag.txt 에 기록된다. -->
           <form class="submit-row" data-flag-form data-challenge-id="<?php echo $challengeId; ?>">
             <input name="flag" placeholder="EST{...}" autocomplete="off" />
             <button class="primary-button" type="submit">蹂닿퀬</button>

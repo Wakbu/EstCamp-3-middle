@@ -73,13 +73,6 @@ $memos = $conn->query('SELECT id, body, review_result, created_at FROM admin_mem
             <textarea id="memo" name="body" rows="6" placeholder="&#xAC80;&#xD1A0;&#xB420; &#xBA54;&#xBAA8;&#xB97C; &#xC785;&#xB825;&#xD558;&#xC138;&#xC694;."></textarea>
             <button class="primary-button" type="submit">筌롫뗀???源낆쨯</button>
           </form>
-          <div class="hint-box visible staged-hints">
-            <strong>?臾믪읈 筌롫뗀??/strong>
-            <p>筌띾맪?놂쭖??袁⑥삋 ??뽮퐣??嚥??類ㅺ컳??뤿뼏??뽰궎.</p>
-            <details><summary>1??ｍ?/summary><p>&#xBA54;&#xBAA8;&#xC5D0; &#xB0A8;&#xAE34; &#xBB38;&#xC790;&#xAC00; &#xC800;&#xC7A5; &#xD6C4; &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3CC;&#xC544;&#xC624;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;. &#xADF8;&#xB300;&#xB85C; &#xBCF4;&#xC774;&#xB294;&#xC9C0;&#xAC00; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p></details>
-            <details><summary>2??ｍ?/summary><p>&#xD398;&#xC774;&#xC9C0;&#xAC00; &#xB0B4; &#xC785;&#xB825;&#xC744; &#xBB38;&#xC790;&#xB85C; &#xBCF4;&#xC874;&#xD558;&#xB294;&#xC9C0;, &#xD654;&#xBA74; &#xAD6C;&#xC131;&#xC694;&#xC18C;&#xB85C; &#xD574;&#xC11D;&#xD558;&#xB294;&#xC9C0; &#xBE44;&#xAD50;&#xD574;&#xBCF4;&#xC138;&#xC694;.</p></details>
-            <details><summary>3??ｍ?/summary><p>&#xAC80;&#xD1A0; &#xD750;&#xB984;&#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xB978; &#xAD8C;&#xD55C;&#xC758; &#xC790;&#xC6D0;&#xC744; &#xC694;&#xCCAD;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xC138;&#xC694;. &#xC694;&#xCCAD; &#xACB0;&#xACFC;&#xAC00; &#xBA54;&#xBAA8; &#xAE30;&#xB85D;&#xC5D0; &#xB0A8;&#xB294;&#xC9C0;&#xB3C4; &#xBCF4;&#xC138;&#xC694;.</p></details>
-          </div>
           <form method="post" class="inline-form">
             <input type="hidden" name="action" value="review" />
             <button class="ghost-button" type="submit">野꺜??? 野꺜???遺욧퍕</button>
@@ -93,6 +86,8 @@ $memos = $conn->query('SELECT id, body, review_result, created_at FROM admin_mem
               </article>
             <?php endwhile; ?>
           </div>
+                    <!-- 작전 단서: 메모 내용은 저장 후 검토 화면에서 다시 렌더링된다. 문자로 보존되는지 요소로 해석되는지 확인하라. -->
+          <!-- 작전 단서: 관리관 검토 흐름에서 /challenges/admin-memo-chain.php?admin_api=flag 요청 결과가 기록에 남을 수 있다. -->
           <form class="submit-row" data-flag-form data-challenge-id="<?php echo $challengeId; ?>">
             <input name="flag" placeholder="EST{...}" autocomplete="off" />
             <button class="primary-button" type="submit">癰귣떯??/button>

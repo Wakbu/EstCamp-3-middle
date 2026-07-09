@@ -52,13 +52,8 @@ if ($searched) {
               <p><?php echo $error ? '&#xC870;&#xD68C; &#xC624;&#xB958;' : ($match ? '&#xC870;&#xAC74;&#xC5D0; &#xB9DE;&#xB294; &#xACF5;&#xC9C0;&#xAC00; &#xC874;&#xC7AC;&#xD569;&#xB2C8;&#xB2E4;.' : '鈺곌퀬??#xB41C; &#xACF5;&#xC9C0;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.'); ?></p>
             </div>
           <?php endif; ?>
-          <div class="hint-box visible staged-hints">
-            <strong>?臾믪읈 筌롫뗀??/strong>
-            <p>筌띾맪?놂쭖??袁⑥삋 ??뽮퐣??嚥??類ㅺ컳??뤿뼏??뽰궎.</p>
-            <details><summary>1??ｍ?/summary><p>&#xC815;&#xC0C1; 野꺜??筌욌뜆??#xC640; &#xD2B9;&#xC218;&#xBB38;&#xC790;&#xAC00; &#xD3EC;&#xD568;&#xB41C; 野꺜??筌욌뜆??#xB97C; &#xBE44;&#xAD50;&#xD574;&#xBCF4;&#xC138;&#xC694;. &#xACB0;&#xACFC; &#xBB38;&#xAD6C;&#xAC00; &#xBC14;&#xB00C;&#xB294; &#xC870;&#xAC74;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p></details>
-            <details><summary>2??ｍ?/summary><p>&#xC5B4;&#xB5A4; &#xC870;&#xAC74;&#xC740; 鈺곌퀬??&#xACB0;&#xACFC;&#xB97C; &#xC874;&#xC7AC;&#xD558;&#xAC8C; &#xB9CC;&#xB4E4;&#xACE0;, &#xC5B4;&#xB5A4; &#xC870;&#xAC74;&#xC740; &#xC5C6;&#xAC8C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;. &#xC774; &#xCC28;&#xC774;&#xB97C; &#xCC38/&#xAC70;&#xC9D3; &#xC2E0;&#xD638;&#xB85C; &#xC0AC;&#xC6A9;&#xD574;&#xBCF4;&#xC138;&#xC694;.</p></details>
-            <details><summary>3??ｍ?/summary><p>&#xD544;&#xC694;&#xD55C; &#xAC12;&#xC744; &#xD55C; &#xBC88;&#xC5D0; &#xBCF4;&#xAE30;&#xBCF4;&#xB2E4;, &#xD55C; &#xAE00;&#xC790;&#xC529; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC744; &#xACE0;&#xB824;&#xD574;&#xBCF4;&#xC138;&#xC694;.</p></details>
-          </div>
+                    <!-- 작전 단서: 검색어는 SQL LIKE 조건 안으로 직접 들어간다. 결과 문구의 참/거짓 차이를 관찰하라. -->
+          <!-- 작전 단서: 한 번에 읽으려 하지 말고 조건을 바꿔가며 존재 여부를 신호로 삼아라. -->
           <form class="submit-row" data-flag-form data-challenge-id="<?php echo $challengeId; ?>">
             <input name="flag" placeholder="EST{...}" autocomplete="off" />
             <button class="primary-button" type="submit">癰귣떯??/button>

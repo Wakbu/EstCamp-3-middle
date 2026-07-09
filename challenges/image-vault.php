@@ -75,13 +75,8 @@ if (isset($_GET['file'])) {
           <?php elseif ($message): ?>
             <div class="hint-box visible"><p><?php echo $message; ?></p></div>
           <?php endif; ?>
-          <div class="hint-box visible staged-hints">
-            <strong>?臾믪읈 筌롫뗀??/strong>
-            <p>筌띾맪?놂쭖??袁⑥삋 ??뽮퐣??嚥??類ㅺ컳??뤿뼏??뽰궎.</p>
-            <details><summary>1??ｍ?/summary><p>&#xD5C8;&#xC6A9;&#xB418;&#xB294; &#xD30C;&#xC77C;&#xBA85;&#xACFC; &#xAC70;&#xBD80;&#xB418;&#xB294; &#xD30C;&#xC77C;&#xBA85;&#xC744; &#xBE44;&#xAD50;&#xD574; &#xD544;&#xD130;&#xAC00; &#xBB38;&#xC790;&#xC5F4;&#xC758; &#xC5B4;&#xB5A4; &#xC870;&#xAC74;&#xC744; &#xBCF4;&#xB294;&#xC9C0; &#xCC3E;&#xC73C;&#xC138;&#xC694;.</p></details>
-            <details><summary>2??ｍ?/summary><p>&#xACBD;&#xB85C; &#xAD6C;&#xC131;&#xC694;&#xC18C;&#xB294; &#xD544;&#xD130; &#xD1B5;&#xACFC; &#xD6C4; &#xC11C;&#xBC84;&#xC5D0;&#xC11C; &#xB2E4;&#xC2DC; &#xD574;&#xC11D;&#xB429;&#xB2C8;&#xB2E4;. &#xC911;&#xAC04; &#xACBD;&#xB85C;&#xB97C; &#xC774;&#xB3D9;&#xD558;&#xB294; &#xD45C;&#xD604;&#xC744; &#xB5A0;&#xC62C;&#xB824;&#xBCF4;&#xC138;&#xC694;.</p></details>
-            <details><summary>3??ｍ?/summary><p>&#xD544;&#xD130;&#xAC00; &#xD1B5;&#xACFC;&#xD560; &#xB9CC;&#xD55C; &#xD45C;&#xC2DD;&#xC744; &#xB0A8;&#xAE30;&#xACE0;, &#xC2E4;&#xC81C; &#xC11C;&#xBC84; &#xD574;&#xC11D; &#xACB0;&#xACFC;&#xB294; &#xB2E4;&#xB978; &#xD30C;&#xC77C;&#xB85C; &#xD5A5;&#xD558;&#xAC8C; &#xB9CC;&#xB4E4;&#xC5B4;&#xBCF4;&#xC138;&#xC694;.</p></details>
-          </div>
+                    <!-- 작전 단서: 필터는 파일명에 .png 포함 여부만 본다. 실제 경로 해석은 그 뒤에 다시 일어난다. -->
+          <!-- 작전 단서: 통과용 표식과 실제 접근 대상이 서로 다르게 해석되도록 경로를 구성하라. -->
           <form class="submit-row" data-flag-form data-challenge-id="<?php echo $challengeId; ?>">
             <input name="flag" placeholder="EST{...}" autocomplete="off" />
             <button class="primary-button" type="submit">癰귣떯??/button>

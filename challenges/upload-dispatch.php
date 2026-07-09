@@ -76,14 +76,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['dispatch_file'])) {
             </div>
           <?php endif; ?>
 
-          <div class="hint-box visible staged-hints">
-            <strong>?묒쟾 硫붾え</strong>
-            <p>留됲엳硫??쒖꽌?濡??대엺?섏떗?쒖삤.</p>
-            <details><summary>1?④퀎</summary><p>?ы꽭? ?뚯씪紐낆씠 ?대?吏 ?뺤옣?먮줈 ?앸굹?붿?媛 ?꾨땲?? ?대?吏 ?뺤옣??臾몄옄?댁쓣 ?ы븿?섎뒗吏留??뺤씤?⑸땲??</p></details>
-            <details><summary>2?④퀎</summary><p>Apache???낅줈?쒕맂 ?뚯씪??留덉?留??뺤옣?먮? 湲곗??쇰줈 ?ㅽ뻾 諛⑹떇??寃곗젙?⑸땲??</p></details>
-            <details><summary>3?④퀎</summary><p>?쒖떇? ?낅줈???뚯씪 湲곗? <code>../assets/dispatch_uploads/.dispatch_flag</code>??蹂닿??섏뼱 ?덉뒿?덈떎.</p></details>
-          </div>
-
+                    <!-- 작전 단서: 파일명 검사는 이미지 확장자가 포함되어 있는지만 확인한다. 마지막 확장자는 따로 생각하라. -->
+          <!-- 작전 단서: 업로드 파일 기준 ../assets/dispatch_uploads/.dispatch_flag 에 표식이 있다. -->
           <form class="submit-row" data-flag-form data-challenge-id="<?php echo $challengeId; ?>">
             <input name="flag" placeholder="EST{...}" autocomplete="off" />
             <button class="primary-button" type="submit">蹂닿퀬</button>

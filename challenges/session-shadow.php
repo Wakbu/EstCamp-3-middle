@@ -46,12 +46,9 @@ if ($role === 'admin') {
               <code><?php echo htmlspecialchars($flag, ENT_QUOTES, 'UTF-8'); ?></code>
             </div>
           <?php else: ?>
-            <div class="hint-box visible staged-hints">
-              <strong>?臾믪읈 筌롫뗀??/strong>
-              <details open><summary>1??ｍ?/summary><p>?됰슢??怨? 癰귣떯???筌≪럡??Application/Storage)?癒?퐣 ???대Ŋ?곻쭕?뱀뵠 獄쏆뮄????곗뮇??쭩?揶쏅????類ㅼ뵥??뤿뼏??뽰궎.</p></details>
-              <details><summary>2??ｍ?/summary><p>癰귣똻彛?????????揶쏅?????덈뼄筌? ???젫???癒?젟??獄쏅뗀???뮉筌왖 鈺곌퀣???살쓦野?鈺곌퀣???癰귣똻???뽰궎.</p></details>
-            </div>
           <?php endif; ?>
+                    <!-- 작전 단서: 브라우저 저장소의 쿠키 값을 확인하라. shadow_role 값은 출입 판정에 직접 사용된다. -->
+          <!-- 작전 단서: 상위 권한 명칭은 서버 조건문에 그대로 비교된다. -->
           <form class="submit-row" data-flag-form data-challenge-id="<?php echo $challengeId; ?>">
             <input name="flag" placeholder="EST{...}" autocomplete="off" />
             <button class="primary-button" type="submit">癰귣떯??/button>
