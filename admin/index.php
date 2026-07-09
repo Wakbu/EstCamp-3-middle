@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 require __DIR__ . '/../api/db.php';
 
@@ -54,7 +54,7 @@ function build_challenge_template(array $data): string {
             <details><summary>2?④퀎</summary><p>留됲삍?????뺤씤???ㅼ쓬 諛⑺뼢???묒꽦?섏떗?쒖삤.</p></details>
           </div>
           <form class="submit-row" data-flag-form data-challenge-id="{$challengeId}">
-            <input name="flag" placeholder="EST{...}" autocomplete="off" />
+            <input name="flag" placeholder="FLAG{...}" autocomplete="off" />
             <button class="primary-button" type="submit">蹂닿퀬</button>
           </form>
         </div>
@@ -474,7 +474,7 @@ function difficulty_options(string $current): string {
                 </div>
                 <label>?섏씠吏 寃쎈줈<input name="path" value="<?= h($editingChallenge['path']) ?>" required /></label>
                 <label>釉뚮━??textarea name="summary" rows="3" required><?= h($editingChallenge['summary']) ?></textarea></label>
-                <label>?몄쬆 ?쒖떇<input name="flag" value="<?= h($editingChallenge['flag'] ?? '') ?>" placeholder="EST{...}" required /></label>
+                <label>?몄쬆 ?쒖떇<input name="flag" value="<?= h($editingChallenge['flag'] ?? '') ?>" placeholder="FLAG{...}" required /></label>
                 <label class="check-row"><input name="is_active" type="checkbox" <?= ((int) $editingChallenge['is_active']) === 1 ? 'checked' : '' ?> /> 硫붿씤 ?곹솴?먯뿉 ?쒖떆</label>
                 <?php if ($editingTemplateContent !== null): ?>
                   <label>PHP ?뚯씪 ?댁슜<textarea class="code-editor" name="template_content" rows="18"><?= h($editingTemplateContent) ?></textarea></label>
@@ -499,7 +499,7 @@ function difficulty_options(string $current): string {
                 <label>?섏씠吏 寃쎈줈<input name="path" placeholder="/challenges/generated/new-operation.php" /></label>
                 <p class="form-help">?쒗뵆由??앹꽦??耳쒕㈃ 怨쇱젣 ID 湲곗??쇰줈 寃쎈줈媛 ?먮룞 ?앹꽦?⑸땲??</p>
                 <label>釉뚮━??textarea name="summary" rows="3" required></textarea></label>
-                <label>?몄쬆 ?쒖떇<input name="flag" placeholder="EST{...}" required /></label>
+                <label>?몄쬆 ?쒖떇<input name="flag" placeholder="FLAG{...}" required /></label>
                 <label class="check-row"><input name="create_template" type="checkbox" checked /> PHP ?쒗뵆由??앹꽦</label>
                 <label class="check-row"><input name="overwrite_template" type="checkbox" /> 湲곗〈 ?뚯씪 援먯껜</label>
                 <label class="check-row"><input name="is_active" type="checkbox" checked /> 硫붿씤 ?곹솴?먯뿉 ?쒖떆</label>

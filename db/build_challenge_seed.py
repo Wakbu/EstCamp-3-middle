@@ -12,10 +12,10 @@ challenges = [
     ('admin-memo-chain', 'Admin Memo Chain', '검열관', '고급', 400, '/challenges/admin-memo-chain.php', '검열관 단말에서 다시 열리는 야전 메모를 이용해 내부 전용 호출까지 연결하십시오.', 1, 40),
 ]
 flags = [
-    ('session-shadow', 'EST{cookie_role_admin_shadow}'),
-    ('blind-notice', 'EST{boolean_blind_notice_42c7}'),
-    ('image-vault', 'EST{image_vault_path_filter_bypass}'),
-    ('admin-memo-chain', 'EST{stored_xss_admin_memo_chain}'),
+    ('session-shadow', 'FLAG{cookie_role_admin_shadow}'),
+    ('blind-notice', 'FLAG{boolean_blind_notice_42c7}'),
+    ('image-vault', 'FLAG{image_vault_path_filter_bypass}'),
+    ('admin-memo-chain', 'FLAG{stored_xss_admin_memo_chain}'),
 ]
 lines = []
 lines.append('USE wargame_lab;')
