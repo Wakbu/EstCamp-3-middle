@@ -33,6 +33,12 @@ $displayOverrides = [
         'difficulty' => '고급',
         'summary' => '관리관 검토 화면에 저장되는 메모를 이용해 전용 API 호출까지 연결하십시오.',
     ],
+    'internal-supply' => [
+        'title' => '내부 보급망 점검기',
+        'category' => '내부망 요청',
+        'difficulty' => '중상급',
+        'summary' => '작전 서버의 대리 조회 기능으로 내부 전용 인증 페이지에 접근하십시오.',
+    ],
 ];
 
 $conn = db();

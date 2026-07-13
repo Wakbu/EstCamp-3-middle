@@ -21,6 +21,7 @@ INSERT INTO challenges (challenge_id, title, category, difficulty, points, path,
   ('idle-empire', '코인 제국 보급 작전', '보급 자산', '중급', 300, '/challenges/idle-empire.php', '브라우저 저장소와 최종 보고 요청을 분석해 클라이언트 신뢰 취약점을 확인하십시오.', 1, 35),
   ('net-diagnostics', '네트워크 진단', '명령어 주입', '중상급', 350, '/challenges/net-diagnostics.php', 'ping 명령 뒤에 붙는 사용자 입력을 이용해 추가 명령을 실행하십시오.', 1, 37),
   ('admin-memo-chain', '관리관 메모 연쇄', '검문소', '고급', 400, '/challenges/admin-memo-chain.php', '관리관 검토 화면에 저장되는 메모를 이용해 전용 API 호출까지 연결하십시오.', 1, 40),
+  ('internal-supply', '내부 보급망 점검기', '내부망 요청', '중상급', 375, '/challenges/internal-supply.php', '작전 서버의 대리 조회 기능으로 내부 전용 인증 페이지에 접근하십시오.', 1, 45),
   ('upload-dispatch', '전송 파일 업로드', '파일 업로드', '고급', 450, '/challenges/upload-dispatch.php', '허술한 이미지 파일명 검사를 우회하고 업로드한 첨부 파일을 실행하십시오.', 1, 50)
 ON DUPLICATE KEY UPDATE
   title = VALUES(title), category = VALUES(category), difficulty = VALUES(difficulty), points = VALUES(points), path = VALUES(path), summary = VALUES(summary), is_active = VALUES(is_active), sort_order = VALUES(sort_order);
@@ -32,6 +33,7 @@ INSERT INTO challenge_flags (challenge_id, flag) VALUES
   ('idle-empire', 'FLAG{idle_empire_client_trust_bypass}'),
   ('net-diagnostics', 'FLAG{ops_ping_command_injection}'),
   ('admin-memo-chain', 'FLAG{stored_xss_admin_memo_chain}'),
+  ('internal-supply', 'FLAG{ssrf_internal_supply_route}'),
   ('upload-dispatch', 'FLAG{dispatch_upload_php_execution}')
 ON DUPLICATE KEY UPDATE flag = VALUES(flag);
 
