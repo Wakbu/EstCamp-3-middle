@@ -38,4 +38,6 @@ $stmt = $conn->prepare('DELETE FROM submissions WHERE team_id = ?');
 $stmt->bind_param('i', $teamId);
 $stmt->execute();
 
+$conn->query('DELETE FROM admin_memos');
+
 echo json_encode(['ok' => true, 'team' => $teamName], JSON_UNESCAPED_UNICODE);
