@@ -78,7 +78,7 @@ $report = $reports[$requestedReport] ?? null;
           <small>IDOR / 중급</small>
         </div>
         <div class="challenge-body">
-          <p class="eyebrow">325 전과 / 접근 제어 작전</p>
+          <p class="eyebrow">280 전과 / 접근 제어 작전</p>
           <h1>보고서 번호 뒤에 숨은 비문을 찾아라</h1>
           <p>분대 보고서 열람소는 공개 목록에서 선택한 문서를 보여줍니다. 목록 링크가 어떤 요청으로 이어지는지 관찰하고, 서버가 보고서 번호를 어떻게 신뢰하는지 확인하십시오.</p>
 

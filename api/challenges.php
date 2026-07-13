@@ -12,13 +12,13 @@ $displayOverrides = [
     'blind-notice' => [
         'title' => '비문 공지 검색소',
         'category' => '공지 검색',
-        'difficulty' => '중급',
+        'difficulty' => '중상급',
         'summary' => '검색어가 조회문에 들어가는 방식을 관찰해 비공개 작전 메모의 인증 표식을 추적하십시오.',
     ],
     'image-vault' => [
         'title' => '영상 보급창',
         'category' => '보급창',
-        'difficulty' => '상급 입문',
+        'difficulty' => '중급',
         'summary' => '영상 보급창의 파일명 검문 규칙을 우회해 내부 보관 자료를 열람하십시오.',
     ],
     'idle-empire' => [
@@ -36,7 +36,7 @@ $displayOverrides = [
     'reflected-board' => [
         'title' => '반사 게시판 검색',
         'category' => 'DOM XSS',
-        'difficulty' => '중급 입문',
+        'difficulty' => '초급',
         'summary' => '검색 결과 렌더링 흐름을 악용해 브라우저 alert 호출을 발생시키십시오.',
     ],
     'internal-supply' => [
