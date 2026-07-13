@@ -113,6 +113,16 @@ function validate_challenge_data(array $data): string {
     return '';
 }
 
+function clear_challenge_flag_cache(string $challengeId): void {
+    $paths = [];
+    if ($challengeId === 'image-vault') $paths[] = __DIR__ . '/../assets/vault/flag.txt';
+    if ($challengeId === 'upload-dispatch') $paths[] = __DIR__ . '/../assets/dispatch_uploads/.dispatch_flag';
+    if ($challengeId === 'net-diagnostics') $paths[] = '/tmp/est-net-diagnostics-flag.txt';
+    foreach ($paths as $path) {
+        if (is_file($path)) @unlink($path);
+    }
+}
+
 function challenge_exists(mysqli $conn, string $challengeId): bool {
     $stmt = $conn->prepare('SELECT challenge_id FROM challenges WHERE challenge_id = ? LIMIT 1');
     $stmt->bind_param('s', $challengeId);
@@ -127,6 +137,7 @@ function insert_challenge(mysqli $conn, array $data): void {
     $stmt = $conn->prepare('INSERT INTO challenge_flags (challenge_id, flag) VALUES (?, ?)');
     $stmt->bind_param('ss', $data['challenge_id'], $data['flag']);
     $stmt->execute();
+    clear_challenge_flag_cache($data['challenge_id']);
 }
 
 function update_challenge(mysqli $conn, string $originalId, array $data): string {
@@ -148,6 +159,8 @@ function update_challenge(mysqli $conn, string $originalId, array $data): string
         $stmt = $conn->prepare('INSERT INTO challenge_flags (challenge_id, flag) VALUES (?, ?) ON DUPLICATE KEY UPDATE flag = VALUES(flag)');
         $stmt->bind_param('ss', $data['challenge_id'], $data['flag']);
         $stmt->execute();
+        clear_challenge_flag_cache($originalId);
+        clear_challenge_flag_cache($data['challenge_id']);
         $conn->commit();
     } catch (Throwable $e) {
         $conn->rollback();
