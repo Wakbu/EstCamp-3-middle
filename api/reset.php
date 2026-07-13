@@ -2,6 +2,21 @@
 header('Content-Type: application/json; charset=utf-8');
 require __DIR__ . '/db.php';
 
+function clear_dispatch_uploads(): void {
+    $dir = __DIR__ . '/../assets/dispatch_uploads';
+    if (!is_dir($dir)) {
+        return;
+    }
+    foreach (scandir($dir) ?: [] as $name) {
+        if ($name === '.' || $name === '..') {
+            continue;
+        }
+        $path = $dir . '/' . $name;
+        if (is_file($path)) {
+            unlink($path);
+        }
+    }
+}
 function normalize_team_name(string $name): string {
     $name = trim($name);
     if ($name === '') {
@@ -39,5 +54,6 @@ $stmt->bind_param('i', $teamId);
 $stmt->execute();
 
 $conn->query('DELETE FROM admin_memos');
+clear_dispatch_uploads();
 
 echo json_encode(['ok' => true, 'team' => $teamName], JSON_UNESCAPED_UNICODE);
