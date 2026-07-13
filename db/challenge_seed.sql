@@ -16,11 +16,11 @@ CREATE TABLE IF NOT EXISTS admin_memos (
 
 INSERT INTO challenges (challenge_id, title, category, difficulty, points, path, summary, is_active, sort_order) VALUES
   ('session-shadow', '세션 그림자', '출입증', '초급', 150, '/challenges/session-shadow.php', '교육망 출입증에 기록된 보직 값을 확인하고 상위 권한으로 통제소를 통과하십시오.', 1, 10),
-  ('blind-notice', '비문 공지 검색소', '공지 검색', '중급', 250, '/challenges/blind-notice.php', '공개 게시판의 응답 신호를 관찰해 비공개 작전 메모의 인증 표식을 추적하십시오.', 1, 20),
+  ('blind-notice', '비문 공지 검색소', '공지 검색', '중급', 250, '/challenges/blind-notice.php', '검색어가 조회문에 들어가는 방식을 관찰해 비공개 작전 메모의 인증 표식을 추적하십시오.', 1, 20),
   ('image-vault', '영상 보급창', '보급창', '상급 입문', 300, '/challenges/image-vault.php', '영상 보급창의 파일명 검문 규칙을 우회해 내부 보관 자료를 열람하십시오.', 1, 30),
   ('idle-empire', '코인 제국 보급 작전', '보급 자산', '중급', 300, '/challenges/idle-empire.php', '브라우저 저장소와 최종 보고 요청을 분석해 클라이언트 신뢰 취약점을 확인하십시오.', 1, 35),
-  ('net-diagnostics', '네트워크 진단', '명령어 주입', '중상급', 350, '/challenges/net-diagnostics.php', '사용자 입력으로 조립되는 네트워크 진단 명령을 악용하십시오.', 1, 37),
-  ('admin-memo-chain', '관리관 메모 연쇄', '검문소', '고급', 400, '/challenges/admin-memo-chain.php', '관리관 메모 체계에서 저장된 작전 메모를 이용해 최종 인증 표식까지 연결하십시오.', 1, 40),
+  ('net-diagnostics', '네트워크 진단', '명령어 주입', '중상급', 350, '/challenges/net-diagnostics.php', 'ping 명령 뒤에 붙는 사용자 입력을 이용해 추가 명령을 실행하십시오.', 1, 37),
+  ('admin-memo-chain', '관리관 메모 연쇄', '검문소', '고급', 400, '/challenges/admin-memo-chain.php', '관리관 검토 화면에 저장되는 메모를 이용해 전용 API 호출까지 연결하십시오.', 1, 40),
   ('upload-dispatch', '전송 파일 업로드', '파일 업로드', '고급', 450, '/challenges/upload-dispatch.php', '허술한 이미지 파일명 검사를 우회하고 업로드한 첨부 파일을 실행하십시오.', 1, 50)
 ON DUPLICATE KEY UPDATE
   title = VALUES(title), category = VALUES(category), difficulty = VALUES(difficulty), points = VALUES(points), path = VALUES(path), summary = VALUES(summary), is_active = VALUES(is_active), sort_order = VALUES(sort_order);
