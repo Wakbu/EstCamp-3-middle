@@ -33,6 +33,12 @@ $displayOverrides = [
         'difficulty' => '고급',
         'summary' => '관리관 검토 화면에 저장되는 메모를 이용해 전용 API 호출까지 연결하십시오.',
     ],
+    'reflected-board' => [
+        'title' => '반사 게시판 검색',
+        'category' => 'DOM XSS',
+        'difficulty' => '중급 입문',
+        'summary' => '검색 결과 렌더링 흐름을 악용해 브라우저 alert 호출을 발생시키십시오.',
+    ],
     'internal-supply' => [
         'title' => '내부 보급망 점검기',
         'category' => '내부망 요청',
