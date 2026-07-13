@@ -20,7 +20,7 @@ function clear_dispatch_uploads(): void {
 function normalize_team_name(string $name): string {
     $name = trim($name);
     if ($name === '') {
-        return 'you';
+        return '';
     }
     return substr($name, 0, 64);
 }
@@ -31,8 +31,16 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$teamName = normalize_team_name($_POST['team'] ?? 'you');
+$teamName = normalize_team_name($_POST['team'] ?? '');
 $conn = db();
+
+$conn->query('DELETE FROM admin_memos');
+clear_dispatch_uploads();
+
+if ($teamName === '') {
+    echo json_encode(['ok' => true, 'team' => ''], JSON_UNESCAPED_UNICODE);
+    exit;
+}
 
 $stmt = $conn->prepare('SELECT id FROM teams WHERE name = ? LIMIT 1');
 $stmt->bind_param('s', $teamName);
@@ -53,7 +61,5 @@ $stmt = $conn->prepare('DELETE FROM submissions WHERE team_id = ?');
 $stmt->bind_param('i', $teamId);
 $stmt->execute();
 
-$conn->query('DELETE FROM admin_memos');
-clear_dispatch_uploads();
 
 echo json_encode(['ok' => true, 'team' => $teamName], JSON_UNESCAPED_UNICODE);

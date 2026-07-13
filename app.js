@@ -204,8 +204,7 @@ document.querySelector("#team-form")?.addEventListener("submit", async (event) =
 });
 
 async function resetProgress() {
-  if (!requireTeamName()) return;
-  if (!window.confirm("현재 분대의 작전 완료 기록을 초기화할까요?")) return;
+  if (!window.confirm("작전 완료 기록과 문제 임시 자료를 초기화할까요?")) return;
   try {
     const result = await fetchJson("/api/reset.php", {
       method: "POST",
@@ -214,7 +213,7 @@ async function resetProgress() {
     });
     if (result.ok) {
       solved = new Set();
-      showToast("작전 완료 기록을 초기화했습니다.");
+      showToast("작전 기록과 임시 자료를 초기화했습니다.");
       await loadScoreboard();
     }
   } catch (error) {
