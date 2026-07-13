@@ -26,6 +26,30 @@ $reports = [
         'body' => '야간 순찰 구역 이상 없음. 다음 교대조에 인계했습니다.',
     ],
     '1004' => [
+        'title' => '4분대 장비 반납 보고',
+        'team' => '4분대',
+        'classification' => '비공개',
+        'body' => '훈련 장비 반납 현황 확인 완료. 추가 이상 없음.',
+    ],
+    '1005' => [
+        'title' => '5분대 통신 점검 보고',
+        'team' => '5분대',
+        'classification' => '비공개',
+        'body' => '내부 무전망 감도 점검 완료. 예비 채널은 정상 대기 중입니다.',
+    ],
+    '1006' => [
+        'title' => '6분대 탄약고 순찰 보고',
+        'team' => '6분대',
+        'classification' => '비공개',
+        'body' => '탄약고 외곽 순찰 완료. 출입 기록과 봉인 상태 이상 없음.',
+    ],
+    '1007' => [
+        'title' => '7분대 상황실 인계 보고',
+        'team' => '7분대',
+        'classification' => '비공개',
+        'body' => '상황실 인계 사항 정리 완료. 다음 근무조 확인 필요.',
+    ],
+    '1008' => [
         'title' => '관리관 전용 비문 보고',
         'team' => '관리관',
         'classification' => '비문',
@@ -80,7 +104,7 @@ $report = $reports[$requestedReport] ?? null;
           <?php endif; ?>
           <!-- 소스 힌트: report 파라미터 값이 열람할 보고서 번호를 결정한다. -->
           <!-- 소스 힌트: 공개 목록은 1001~1003만 보여주지만, 서버는 요청한 번호가 공개 목록에 있는지 확인하지 않는다. -->
-          <!-- 소스 힌트: 공개 목록에 없는 가까운 번호를 직접 입력해 비문 보고서를 찾아라. -->
+          <!-- 소스 힌트: 공개 목록에 없는 번호를 순서대로 확인하되, 몇 개의 더미 보고서가 섞여 있다. -->
 
           <form class="submit-row" data-flag-form data-challenge-id="<?php echo $challengeId; ?>">
             <input name="flag" placeholder="FLAG{...}" autocomplete="off" />
