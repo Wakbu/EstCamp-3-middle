@@ -12,7 +12,7 @@
         <span class="brand-mark">작전</span>
         <span>
           <strong>EST 전술보안 인트라넷</strong>
-          <small>교육사이버작전 상황판</small>
+          <small>교육 사이버작전 상황판</small>
         </span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
@@ -26,7 +26,7 @@
       <section class="hero compact-hero" id="home">
         <div class="hero-copy">
           <p class="eyebrow">사이버작전 교육망 / 제한구역</p>
-          <h1>침투 단서를 식별하고 인증 표식을 회수하라.</h1>
+          <h1>취약 지점을 정찰하고 인증 표식을 회수하라.</h1>
           <p>
             본 체계는 교육용 폐쇄망 상황판입니다. 분대명을 등록한 뒤 각 작전 과제의 취약 지점을 정찰하고,
             확보한 인증 표식을 제출하면 전과 현황에 즉시 반영됩니다.
@@ -73,12 +73,21 @@
       <section class="guide" id="guide">
         <div class="section-heading">
           <span>작전 지침</span>
-          <small>문제 추가 구조</small>
+          <small>참가자 안내</small>
         </div>
         <div class="guide-grid">
-          <article><strong>과제 파일</strong><p><code>challenges/*.php</code>에 각 작전 페이지를 배치합니다.</p></article>
-          <article><strong>DB 편제</strong><p><code>challenges</code>와 <code>challenge_flags</code> 테이블에 과제 정보와 인증 표식을 등록합니다.</p></article>
-          <article><strong>상황판 반영</strong><p>메인 상황판은 DB의 활성 과제를 읽어 자동으로 과제 카드를 편성합니다.</p></article>
+          <article>
+            <strong>분대 등록</strong>
+            <p>과제를 풀기 전에 반드시 분대명을 먼저 등록하십시오. 분대명이 없으면 인증 표식을 제출할 수 없고 전과도 기록되지 않습니다.</p>
+          </article>
+          <article>
+            <strong>정찰 절차</strong>
+            <p>문제 설명, 입력값, 쿠키, URL 파라미터, 응답 문구, 개발자 도구를 함께 확인하며 취약 지점을 찾으십시오.</p>
+          </article>
+          <article>
+            <strong>보고 형식</strong>
+            <p>인증 표식은 과제 하단 제출창에 <code>FLAG{...}</code> 형식으로 보고합니다. 대소문자와 특수문자를 정확히 입력해야 합니다.</p>
+          </article>
         </div>
       </section>
     </main>
@@ -94,7 +103,7 @@
           <ol>
             <li>상단 상황판에서 분대명을 등록한 뒤 과제 카드를 선택합니다.</li>
             <li>입력값, 쿠키, 응답 문구, 개발자 도구를 함께 점검합니다.</li>
-            <li>난도가 높은 과제는 힌트를 1단계부터 순서대로 열람합니다.</li>
+            <li>시도가 막히면 문제 소스의 주석 힌트를 확인합니다.</li>
             <li>인증 표식을 확보하면 과제 하단 제출창에 <code>FLAG{...}</code> 형식으로 보고합니다.</li>
           </ol>
           <p class="form-help">힌트는 정답지가 아니라 정찰 순서를 잡아주는 작전 메모입니다.</p>
