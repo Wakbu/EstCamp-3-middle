@@ -9,7 +9,7 @@ from urllib.parse import urlencode
 from urllib.request import urlopen
 
 # 공격 대상 문제 URL입니다.
-# tools 폴더에서 실행해도 이 URL로 HTTP 요청을 보내기 때문에 로컬 파일 경로와는 상관없습니다.
+# IP 주소는 현재 환경에 맞게 변경합니다.
 url = "http://100.83.178.9/challenges/blind-notice.php"
 
 # FLAG에 들어갈 수 있는 문자를 하나씩 대입해볼 목록입니다.
